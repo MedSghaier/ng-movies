@@ -1,0 +1,30 @@
+<div *ngIf="movie">
+  <div class="row mt-3">
+    <div class="col-3">
+      <div class="container">
+        <img [src]="movie.Poster" alt="Poster" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-9 ">
+      <h3>{{ movie.Title }}</h3>
+      <p class="lead">Genre: {{ movie.Genre }}</p>
+      <p class="lead"> IMDB Rating: {{ movie.imdbRating }}</p>
+      <p class="lead"> Awards: {{ movie.Awards }}</p>
+      <div class="content">
+        <h5>Plot: {{ movie.Plot }}</h5>
+        <div >
+          <button *ngIf="user$ | async ; else log"
+          class="btn btn-primary mt-3"
+          (click)="saveMovie(movie)"
+          >Add to Watchlist</button>
+        </div>
+        <ng-template #log>
+          <button 
+            class="btn btn-primary mt-3"
+            (click)="login()"
+          >Login to Add to Watchlist</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

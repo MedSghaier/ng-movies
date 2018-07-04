@@ -1,0 +1,10 @@
+<div class="card my-3">
+  <div class="card-header">
+      <h4>{{ movie.title }}</h4>
+  </div>
+    <img [src]="movie.poster" alt="Movie Poster" style="width: 100%;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Release Date: {{ movie.released }}</li>
+      <li class="list-group-item">Rating: {{ movie.imdbRating }}</li>
+    </ul>
+  </div>

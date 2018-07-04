@@ -1,0 +1,33 @@
+<h2>Need A Movie ?</h2>
+<p class="lead">“Cinema is a mirror by which we often see ourselves.”</p>
+
+<form >
+  <div class="form-group">
+    <input 
+    type="text" 
+    class="form-control"
+    placeholder="Search Music"
+    (keyup)="searchMovies()"
+    name="searchStr" 
+    [(ngModel)]="searchStr">
+  </div>
+</form>
+
+<div *ngIf="searchResMovies">
+  <div *ngFor="let resMovie of searchResMovies">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-block bg-faded mb-3 px-2">
+            <h4>
+              <a routerLink="/movies/{{resMovie.imdbID}}">
+                {{ resMovie.Title }}
+              </a>
+            </h4>
+            <div>
+              <strong>Genre: {{ resMovie.Genre }}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

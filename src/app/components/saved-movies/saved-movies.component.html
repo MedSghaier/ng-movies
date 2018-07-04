@@ -1,0 +1,8 @@
+<div class="row">
+    <ng-container *ngFor="let movie of filtertedMovies; let i = index">
+        <div class="col-3">
+            <movie-card [movie]="movie"></movie-card>
+            <div *ngIf="(i+1) % 6===0" class="w-100"></div>
+        </div>
+    </ng-container>
+</div>
